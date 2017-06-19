@@ -12,18 +12,9 @@ namespace DotVVMExample.ViewModels
         public string Email { get; set; }
         public string Password { get; set; }
 
-        public async Task SignInCommand()
+        public void SignInCommand()
         {
-            try
-            {
-                Context.RedirectToUrl("www.google.com.br");
-                // Context.InterruptRequest();
-            }
-            catch (System.Exception e)
-            {
-                //throw;
-                Console.WriteLine(e.Message);
-            }
+            Context.RedirectToRoute("HomePage");
         }
     }
 }
