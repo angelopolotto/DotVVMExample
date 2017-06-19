@@ -14,7 +14,7 @@ namespace DotVVMExample.ViewModels
 
         public void SignInCommand()
         {
-            Context.RedirectToRoute("HomePage");
+                Context.RedirectToRoute("HomePage");
         }
     }
 }
