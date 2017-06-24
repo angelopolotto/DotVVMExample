@@ -1,0 +1,66 @@
+﻿@viewModel DotVVMExample.ViewModels.SiteViewModel, DotVVMExample
+
+<dot:RequiredResource Name="navbar" />
+
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    
+    <!-- Fixed navbar -->
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Teste DotVVM</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li class="{value: (ActivePage == 'SiteHomePage' ? 'active' : '')}">
+                <dot:RouteLink RouteName="SiteHomePage">
+                    Home
+                </dot:RouteLink>
+            </li>
+            <li class="{value: (ActivePage == 'SiteRegisterPage' ? 'active' : '')}">
+                <dot:RouteLink RouteName="SiteRegisterPage">
+                    Cadastro de itens
+                </dot:RouteLink>
+            </li>
+            <li class="{value: (ActivePage == 'SiteTasksPage' ? 'active' : '')}">
+                <dot:RouteLink RouteName="SiteTasksPage">
+                    Cadastro de tarefas
+                </dot:RouteLink>
+            </li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Outros itens<span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li>
+                    <dot:RouteLink RouteName="SiteCalcPage" class="{value: 'header-item ' + (ActivePage == 'SiteCalcPage' ? 'header-item-active' : '')}">
+                        Calculadora
+                    </dot:RouteLink>
+                </li>
+                <li>
+                    <dot:LinkButton Click="{command: SignOut()}" Text="Sair" class="header-item" Validation.Enabled="false" />
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
+    <dot:ContentPlaceHolder ID="MainContent" />
+
+</body>
+</html>
+
+

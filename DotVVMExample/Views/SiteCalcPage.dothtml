@@ -1,0 +1,24 @@
+﻿@viewModel DotVVMExample.ViewModels.SiteCalcPageViewModel, DotVVMExample
+@masterPage Views/Site.dotmaster
+
+<dot:Content ContentPlaceHolderID="MainContent">
+    <div class="container">
+        <div class="jumbotron">
+            <p>
+                Primeiro número: 
+                <dot:TextBox Text="{value: Number1}" class="form-control" placeholder="Número 1"/>
+            </p>
+            <p>
+                Segundo número: 
+                <dot:TextBox Text="{value: Number2}" class="form-control" placeholder="Número 2"/>
+            </p>
+            <p>
+                <dot:Button Text="Somar" Click="{command: Calculate()}" class="btn btn-lg btn-primary" />
+            </p>
+            <p>
+                O resultado é: {{value: Result}}
+            </p>
+        </div>
+    </div>
+</dot:Content>
+

@@ -1,0 +1,44 @@
+﻿@viewModel DotVVMExample.ViewModels.SiteTasksPageViewModel, DotVVMExample
+@masterPage Views/Site.dotmaster
+
+<dot:Content ContentPlaceHolderID="MainContent">
+
+    <div class="container">
+        <div class="jumbotron">
+
+            <label for="insertItem" class="sr-only">Criar nova tarefa</label>
+            <dot:TextBox Text="{value: NewTaskTitle}" class="form-control" id="insertItem" placeholder="Tarefa"/>
+            
+            <dot:Button Text="Adicionar" Click="{command: AddTask()}" class="btn btn-lg btn-primary btn-block" ButtonTagName="button"/>
+
+            <div class="table-responsive">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Tíitulo</th>
+                            <th>Status</th>
+                            <th>Tarefa comcluída?</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <dot:Repeater DataSource="{value: Tasks}" WrapperTagName="tbody">
+                            <ItemTemplate>
+                                <tr>
+                                    <td>{{value: Title}}</td>
+                                    <td>{{value: Completed ? ("Completa: " + CompletionDate) : "Pendente"}}</td>
+                                    <td>
+                                        <dot:LinkButton Text="Concluída" 
+                                                        Click="{command: CompleteTask()}" 
+                                                        Visible="{value: !Completed}" />
+                                    </td>
+                                </tr>
+                            </ItemTemplate>
+                        </dot:Repeater>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+</dot:Content>
+

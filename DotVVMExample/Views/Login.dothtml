@@ -1,0 +1,38 @@
+﻿@viewModel DotVVMExample.ViewModels.LoginViewModel, DotVVMExample
+
+<dot:RequiredResource Name="signin" />
+
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+
+    <div class="container">
+
+        <form class="form-signin">
+            <h2 class="form-signin-heading">Por favor, faça login</h2>
+            <label for="inputEmail" class="sr-only">Email</label>
+            <dot:TextBox Text="{value: Email}" type="email" id="inputEmail" class="form-control" placeholder="Emai" required autofocus/>
+            <label for="inputPassword" class="sr-only">Senha</label>
+            <dot:TextBox Text="{value: Password}" required type="password" id="inputPassword" class="form-control" placeholder="Senha"/>
+
+            <dot:Button Click="{command: SignIn()}" class="btn btn-lg btn-primary btn-block" 
+                name="submit" IsSubmitButton="true" ButtonTagName="button">Entrar</dot:Button>
+        </form>
+
+        <div class="form-signin">
+            <div class="validation-box">
+                {{value: ErrorMessage}}
+                <dot:ValidationSummary />
+            </div>
+        </div>
+    </div> <!-- /container -->
+    
+</body>
+</html>
+
+
