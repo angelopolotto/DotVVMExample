@@ -19,7 +19,7 @@ Demo apresentado na palestra _Construindo uma aplicação web + MVVM + .NET Core
 ```
 dotnet new -i DotVVM.Templates::*
 ```
-
+
 * Crie um diretório:
 ```
 mkdir ProjectName
