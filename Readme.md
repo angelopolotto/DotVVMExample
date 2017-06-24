@@ -41,3 +41,13 @@ dotnet dotvvm add page Page1 -m Site
 ```
 dotnet dotvvm add control Controls/MyControl.dotcontrol -c
 ```
+
+* Faça _Restore_ dos packes do projeto com o comando:
+```
+dotnet restore
+```
+
+* Execute o projeto:
+```
+dotnet run
+```
